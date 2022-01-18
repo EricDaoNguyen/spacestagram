@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route} from 'react-router-dom';
 import MainPage from './components/MainPage';
 import InformationPage from './components/InformationPage';
 import './App.css';
@@ -7,12 +7,12 @@ import './App.css';
 function App() {
   return (
     <BrowserRouter>
-      <div>
-        <Route component={MainPage} exact path="/" />
-        <Route component={InformationPage} path="/information" />
-      </div>
+      <Routes>
+        <Route element={<MainPage />} exact path="/" />
+        <Route element={<InformationPage />} path="/information" />
+      </Routes>
     </BrowserRouter>
-  );
+  )
 }
 
 export default App;
