@@ -25,7 +25,7 @@ export default function MainPage() {
       // Set state
       setApodData(data);
     }
-  }, []); // Empty array to run only once
+  }, [apodData]);
 
   // Loading state
   if (!apodData) {
