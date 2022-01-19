@@ -25,7 +25,7 @@ export default function MainPage() {
       // Set state
       setApodData(data);
     }
-  }, [apodData]);
+  });
 
   // Loading state
   if (!apodData) {
