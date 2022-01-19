@@ -14,8 +14,6 @@ export default function MainPage() {
 
   // Fetch data from NASA API
   useEffect(() => {
-    const abortController = new AbortController();
-
     fetchData();
     console.log(apodData);
 
@@ -27,8 +25,6 @@ export default function MainPage() {
       // Set state
       setApodData(data);
     }
-
-    return () => { abortController.abort(); };
   }, []); // Empty array to run only once on render
 
   // Loading state
