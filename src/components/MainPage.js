@@ -40,7 +40,7 @@ export default function MainPage() {
   // Render either image or video
   return (
     <>
-      <NavBar className="navbar"/>
+      <NavBar />
       <div className="main-page">
         <div className="header">PHOTO OF THE DAY</div>
         <div className="user">

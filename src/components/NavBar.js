@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { MenuItem, Paper } from 'material-ui';
 import { Grow } from '@material-ui/core';
-import { Button, MenuList, Popper, Stack } from '@mui/material';
+import { Button, createMuiTheme, MenuList, Popper, Stack } from '@mui/material';
 import ClickAwayListener from 'material-ui/internal/ClickAwayListener';
 import { MuiThemeProvider } from 'material-ui/styles';
 
@@ -27,6 +27,9 @@ export default function NavBar() {
       <Stack direction="row" spacing={2}>
         <div className="NavBar">
           <Button
+            variant="contained"
+            color="primary"
+            size="large"
             ref={anchorRef}
             id="composition-button"
             aria-controls={open ? 'composition-menu' : undefined}

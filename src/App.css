@@ -1,3 +1,9 @@
+/* ||||||||||||||| GLOBAL ||||||||||||||| */
+.NavBar {
+  padding-left: 45rem;
+  padding-top: 5rem;
+}
+
 /* ||||||||||||||| MAIN PAGE ||||||||||||||| */
 .main-page {
   display: flex;
@@ -11,6 +17,15 @@
   margin-top: 0.61875rem;
   margin-bottom: 4rem;
   font-family: 'Roboto';
+}
+
+.header:before {
+  content: "";
+  position: absolute;
+  width: 10%;
+  top: 35%;
+  left: 44.80%;
+  border-bottom: 1px solid rgb(0, 0, 0);
 }
 
 .user {
@@ -57,6 +72,5 @@
 /* ||||||||||||||| INFORMATION PAGE  ||||||||||||||| */
 
 /* ||||||||||||||| UNUSED ||||||||||||||| */
-/* .navbar {} */
 /* .date {} */
 /* .explanation {} */
