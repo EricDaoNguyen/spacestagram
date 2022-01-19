@@ -21,19 +21,35 @@ export default function MainPage() {
     }
   }, []); // Empty array to run only once
 
-  // Render
+  // Render either image or video
   return (
     <div className="main-page">
+
       <h1>Welcome to the main page!</h1>
       <Link to="/information">Go to the information page!</Link>
+
+      {apodData.media_type === "image" ? (
       <img
         src={apodData ? apodData.url : null}
         alt={apodData ? apodData.title : null}
       />
-      <p>{apodData.title}</p>
-      <p>{apodData.copyright}</p>
-      <p>{apodData.date}</p>
-      <p>{apodData.explanation}</p>
+      ) : (
+      <iframe
+        src={apodData ? apodData.url : null}
+        title={apodData ? apodData.title : null}
+        frameBorder="0"
+        allow="encrypted-media"
+        allowFullScreen
+      />
+      )}
+
+      <div>
+        <p>{apodData.title}</p>
+        <p>{apodData.copyright}</p>
+        <p>{apodData.date}</p>
+        <p>{apodData.explanation}</p>
+      </div>
+
     </div>
   )
 }
