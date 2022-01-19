@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import NavBar from './NavBar';
+import { Avatar, Backdrop, CircularProgress } from '@material-ui/core';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Favorite from '@material-ui/icons/Favorite';
 import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
-import { Avatar } from '@material-ui/core';
 import { AvatarGroup } from '@material-ui/lab';
 const apiKey = process.env.REACT_APP_KEY;
 
 export default function MainPage() {
-  // Get data and set data (state)
+  // Get state and set state
   const [ apodData, setApodData ] = useState(null);
 
   // Fetch data from NASA API
@@ -22,13 +22,20 @@ export default function MainPage() {
       const response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}`);
       // Convert response to JSON
       const data = await response.json();
-      // Set data (state)
+      // Set state
       setApodData(data);
     }
   }, []); // Empty array to run only once
 
-  // Loading screen
-  if (!apodData) { return <h1>Loading...</h1>; }
+  // Loading state
+  if (!apodData) {
+    return <Backdrop
+      sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+      open={true}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
+  }
 
   // Render either image or video
   return (
