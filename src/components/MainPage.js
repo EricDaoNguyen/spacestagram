@@ -13,7 +13,8 @@ export default function MainPage() {
 
     async function fetchData() {
       // Fetch response
-      const response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}`);
+      // const response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}`);
+      const response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=p44gtqwH4LJiiYouh1Z8Qk5rNzRmxF8PywsmPCi9`);
       // Convert response to JSON
       const data = await response.json();
       // Set data (state)
