@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import NavBar from './NavBar';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import Favorite from '@material-ui/icons/Favorite';
+import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
 const apiKey = process.env.REACT_APP_KEY;
 
 export default function MainPage() {
@@ -44,6 +48,14 @@ export default function MainPage() {
             allowFullScreen
           />
         )}
+        <div>
+          <FormControlLabel
+            control={<Checkbox icon={<FavoriteBorder />}
+                    checkedIcon={<Favorite />}
+              name="checkedH"
+            />}
+          />
+        </div>
         <div>
           <p>{apodData.title}</p>
           <p>{apodData.copyright}</p>
