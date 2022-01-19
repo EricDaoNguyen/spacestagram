@@ -4,6 +4,8 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 import Favorite from '@material-ui/icons/Favorite';
 import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
+import { Avatar } from '@material-ui/core';
+import { AvatarGroup } from '@material-ui/lab';
 const apiKey = process.env.REACT_APP_KEY;
 
 export default function MainPage() {
@@ -55,8 +57,17 @@ export default function MainPage() {
               name="checkedH"
             />}
           />
+          <AvatarGroup max={4}>
+            <Avatar alt="Friend" src="https://picsum.photos/200" />
+            <Avatar alt="Friend" src="https://picsum.photos/300" />
+            <Avatar alt="Friend" src="https://picsum.photos/400" />
+            <Avatar alt="Friend" src="https://picsum.photos/500" />
+            <Avatar alt="Friend" src="https://picsum.photos/600" />
+            <Avatar alt="Friend" src="https://picsum.photos/700" />
+          </AvatarGroup>
         </div>
         <div>
+          <Avatar alt="User" src="https://picsum.photos/100" />
           <p>{apodData.title}</p>
           <p>{apodData.copyright}</p>
           <p>{apodData.date}</p>
