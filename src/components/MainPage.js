@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import NavBar from './NavBar';
 const apiKey = process.env.REACT_APP_KEY;
 
 export default function MainPage() {
@@ -23,12 +23,18 @@ export default function MainPage() {
 
   // Render either image or video
   return (
+    <>
+    <NavBar />
     <div className="main-page">
 
       <h1>Welcome to the main page!</h1>
-      <Link to="/information">Go to the information page!</Link>
 
-      {apodData.media_type === "image" ? (
+      <img
+        src={apodData ? apodData.url : null}
+        alt={apodData ? apodData.title : null}
+      />
+
+      {/* {apodData.media_type === "image" ? (
       <img
         src={apodData ? apodData.url : null}
         alt={apodData ? apodData.title : null}
@@ -41,15 +47,16 @@ export default function MainPage() {
         allow="encrypted-media"
         allowFullScreen
       />
-      )}
+      )} */}
 
       <div>
-        <p>{apodData.title}</p>
-        <p>{apodData.copyright}</p>
-        <p>{apodData.date}</p>
-        <p>{apodData.explanation}</p>
+        <p>{apodData ? apodData.title : null}</p>
+        <p>{apodData ? apodData.copyright : null}</p>
+        <p>{apodData ? apodData.date : null}</p>
+        <p>{apodData ? apodData.explanation : null}</p>
       </div>
 
     </div>
+    </>
   )
 }
