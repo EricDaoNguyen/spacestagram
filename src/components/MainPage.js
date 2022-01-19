@@ -43,14 +43,20 @@ export default function MainPage() {
       <NavBar className="navbar"/>
       <div className="main-page">
         <div className="header">PHOTO OF THE DAY</div>
-        <div className="image">
+        <div className="user">
+          <Avatar alt="User" src="https://picsum.photos/100" />
+          <p>&nbsp;&nbsp;{apodData.copyright}</p>
+        </div>
+        <div className="media-container">
           {apodData.media_type === "image" ? (
             <img
+              className='image'
               src={apodData.url}
               alt={apodData.title}
             />
             ) : (
             <iframe
+              className='video'
               src={apodData.url}
               title={apodData.title}
               frameBorder="0"
@@ -75,12 +81,12 @@ export default function MainPage() {
             <Avatar alt="Friend" src="https://picsum.photos/700" />
           </AvatarGroup>
         </div>
-        <div className="user">
-          <Avatar alt="User" src="https://picsum.photos/100" />
-          <p>{apodData.title}</p>
-          <p>{apodData.copyright}</p>
-          <p>{apodData.date}</p>
-          <p>{apodData.explanation}</p>
+        <div className="description-container">
+          <div className="title-date-container">
+            <p className="title">{apodData.title}</p>
+            <p className="date">{apodData.date}</p>
+          </div>
+          <p className="explanation">{apodData.explanation}</p>
         </div>
       </div>
     </>
