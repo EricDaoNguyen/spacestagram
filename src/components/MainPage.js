@@ -9,6 +9,7 @@ export default function MainPage() {
   // Fetch data from NASA API
   useEffect(() => {
     fetchData();
+    console.log(apodData);
 
     async function fetchData() {
       // Fetch response
@@ -29,6 +30,10 @@ export default function MainPage() {
         src={apodData ? apodData.url : null}
         alt={apodData ? apodData.title : null}
       />
+      <p>{apodData.title}</p>
+      <p>{apodData.copyright}</p>
+      <p>{apodData.date}</p>
+      <p>{apodData.explanation}</p>
     </div>
   )
 }
