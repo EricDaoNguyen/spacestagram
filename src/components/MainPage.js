@@ -21,42 +21,36 @@ export default function MainPage() {
     }
   }, []); // Empty array to run only once
 
+  // Loading screen
+  if (!apodData) { return <h1>Loading...</h1>; }
+
   // Render either image or video
   return (
     <>
-    <NavBar />
-    <div className="main-page">
-
-      <h1>Welcome to the main page!</h1>
-
-      <img
-        src={apodData ? apodData.url : null}
-        alt={apodData ? apodData.title : null}
-      />
-
-      {/* {apodData.media_type === "image" ? (
-      <img
-        src={apodData ? apodData.url : null}
-        alt={apodData ? apodData.title : null}
-      />
-      ) : (
-      <iframe
-        src={apodData ? apodData.url : null}
-        title={apodData ? apodData.title : null}
-        frameBorder="0"
-        allow="encrypted-media"
-        allowFullScreen
-      />
-      )} */}
-
-      <div>
-        <p>{apodData ? apodData.title : null}</p>
-        <p>{apodData ? apodData.copyright : null}</p>
-        <p>{apodData ? apodData.date : null}</p>
-        <p>{apodData ? apodData.explanation : null}</p>
+      <NavBar />
+      <div className="main-page">
+        <h1>Welcome to the main page!</h1>
+        {apodData.media_type === "image" ? (
+          <img
+            src={apodData.url}
+            alt={apodData.title}
+          />
+          ) : (
+          <iframe
+            src={apodData.url}
+            title={apodData.title}
+            frameBorder="0"
+            allow="encrypted-media"
+            allowFullScreen
+          />
+        )}
+        <div>
+          <p>{apodData.title}</p>
+          <p>{apodData.copyright}</p>
+          <p>{apodData.date}</p>
+          <p>{apodData.explanation}</p>
+        </div>
       </div>
-
-    </div>
     </>
   )
 }
