@@ -4,7 +4,7 @@ const apiKey = process.env.REACT_APP_KEY;
 
 export default function MainPage() {
   // Get data and set data (state)
-  const [ apodData, setApodData ] = useState(null)
+  const [ apodData, setApodData ] = useState(null);
 
   // Fetch data from NASA API
   useEffect(() => {
@@ -25,6 +25,10 @@ export default function MainPage() {
     <div className="main-page">
       <h1>Welcome to the main page!</h1>
       <Link to="/information">Go to the information page!</Link>
+      <img
+        src={apodData ? apodData.url : null}
+        alt={apodData ? apodData.title : null}
+      />
     </div>
   )
 }
