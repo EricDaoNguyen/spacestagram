@@ -40,24 +40,26 @@ export default function MainPage() {
   // Render either image or video
   return (
     <>
-      <NavBar />
+      <NavBar className="navbar"/>
       <div className="main-page">
-        <h1>Welcome to the main page!</h1>
-        {apodData.media_type === "image" ? (
-          <img
-            src={apodData.url}
-            alt={apodData.title}
-          />
-          ) : (
-          <iframe
-            src={apodData.url}
-            title={apodData.title}
-            frameBorder="0"
-            allow="encrypted-media"
-            allowFullScreen
-          />
-        )}
-        <div>
+        <div className="header">PHOTO OF THE DAY</div>
+        <div className="image">
+          {apodData.media_type === "image" ? (
+            <img
+              src={apodData.url}
+              alt={apodData.title}
+            />
+            ) : (
+            <iframe
+              src={apodData.url}
+              title={apodData.title}
+              frameBorder="0"
+              allow="encrypted-media"
+              allowFullScreen
+            />
+          )}
+        </div>
+        <div className="like-and-friends">
           <FormControlLabel
             control={<Checkbox icon={<FavoriteBorder />}
                     checkedIcon={<Favorite />}
@@ -73,7 +75,7 @@ export default function MainPage() {
             <Avatar alt="Friend" src="https://picsum.photos/700" />
           </AvatarGroup>
         </div>
-        <div>
+        <div className="user">
           <Avatar alt="User" src="https://picsum.photos/100" />
           <p>{apodData.title}</p>
           <p>{apodData.copyright}</p>
