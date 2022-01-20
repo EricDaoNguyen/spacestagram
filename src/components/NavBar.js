@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { MenuItem, Paper } from 'material-ui';
 import { Grow } from '@material-ui/core';
-import { Button, createMuiTheme, MenuList, Popper, Stack } from '@mui/material';
+import { Button, MenuList, Popper, Stack } from '@mui/material';
 import ClickAwayListener from 'material-ui/internal/ClickAwayListener';
 import { MuiThemeProvider } from 'material-ui/styles';
 

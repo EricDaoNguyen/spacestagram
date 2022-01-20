@@ -40,7 +40,8 @@ export default function MainPage() {
   // Render either image or video
   return (
     <>
-      <NavBar />
+    <div className="main-container">
+    <NavBar />
       <div className="main-page">
         <div className="header">PHOTO OF THE DAY</div>
         <div className="user">
@@ -89,6 +90,7 @@ export default function MainPage() {
           <p className="explanation">{apodData.explanation}</p>
         </div>
       </div>
+    </div>
     </>
   )
 }
