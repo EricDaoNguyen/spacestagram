@@ -75,6 +75,32 @@
 }
 
 /* ||||||||||||||| INFORMATION PAGE  ||||||||||||||| */
+.information-container {
+  background-color: rgb(234, 234, 234);
+}
+
+.information-page {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  background: inherit;
+}
+
+.information-page-icons {
+  display: flex;
+  flex-direction: row;
+}
+
+.information-page-text {
+  display: flex;
+  flex-direction: column;
+  padding-left: 50rem;
+  padding-right: 50rem;
+  padding-top: 2rem;
+  font-family: 'Gill Sans', sans-serif;
+  font-size: 22.5px;
+}
 
 /* ||||||||||||||| UNUSED ||||||||||||||| */
 /* .date {} */
