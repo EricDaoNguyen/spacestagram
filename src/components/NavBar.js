@@ -20,7 +20,7 @@ export default function NavBar() {
   const handleClose = (event) => {
     if (anchorRef.current && anchorRef.current.contains(event.target)) { return; }
     setOpen(false);
-  }
+  };
 
   return (
     <MuiThemeProvider>
@@ -32,8 +32,8 @@ export default function NavBar() {
             size="large"
             ref={anchorRef}
             id="composition-button"
-            aria-controls={open ? 'composition-menu' : undefined}
-            aria-expanded={open ? 'true' : undefined}
+            aria-controls={open ? "composition-menu" : undefined}
+            aria-expanded={open ? "true" : undefined}
             aria-haspopup="true"
             onClick={handleToggle}
           >
@@ -52,7 +52,7 @@ export default function NavBar() {
               {...TransitionProps}
               style={{
                 transformOrigin:
-                  placement === 'bottom-start' ? 'left top' : 'left bottom',
+                  placement === "bottom-start" ? "left top" : "left bottom",
               }}
             >
               <Paper>

@@ -4,7 +4,7 @@ import MainPage from './components/MainPage';
 import InformationPage from './components/InformationPage';
 import './App.css';
 
-function App() {
+export default function App() {
   return (
     <BrowserRouter>
       <Routes>
@@ -14,5 +14,3 @@ function App() {
     </BrowserRouter>
   )
 }
-
-export default App;
